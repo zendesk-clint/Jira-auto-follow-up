@@ -1,0 +1,4 @@
+project = SSPM
+AND statusCategory != Done
+AND assignee IS NOT EMPTY
+ORDER BY updated DESC
