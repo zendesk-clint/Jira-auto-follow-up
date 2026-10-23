@@ -71,6 +71,3 @@ jira = JIRA(jira_url, username, apikey)
 slack_id, slack_username = jira.get_slack_info('<account_id>')
 ```
 
-### Who do I talk to? ###
-
-* Slack: `#shipit49-automation-slack`, `@saurav`, `@deads`
