@@ -43,31 +43,3 @@ pip3 install slackclient
 python3 sync.py --slack_token $SLACK_TOKEN --jira_url $JIRA_URL --username $USERNAME --apikey $APIKEY
 python3 sync.py -h # For Help
 ```
-
-#### Note:
-
-You can tweak the following configuration values in the `sync.py` script:
-```python
-# Use a different log level (log.DEBUG/log.WARN)
-import logging as log
-log.basicConfig(level=log.INFO)
-
-# Pagination limit for Slack 'list_users'
-SLACK_PAGINATION_LIMIT = 30
-
-# Delay in between API calls in ms (because we're making multiple requests, and do not want to exceed rate limits)
-API_DELAY_MS = 500
-```
-
-Additionally, you can use the script's `get_slack_info(account_id)` to obtain slack username, ID for user account from user 
-properties:
-
-```python3
-# Import script in workspace
-import sync
-
-jira_url, username, apikey = '<URL>', '<USERNAME>', '<APIKEY>'
-jira = JIRA(jira_url, username, apikey)
-slack_id, slack_username = jira.get_slack_info('<account_id>')
-```
-
